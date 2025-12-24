@@ -131,4 +131,52 @@ fn main()
     };
 
     println!("The loop stopped at: {}", result);
+
+
+    //for statment
+    for i in 1..6 {
+        println!("i is: {}", i);
+    }
+
+    for i in 1..=10 {
+        if i == 3 {
+            continue; // skip 3
+        }
+        if i == 5 {
+            break; // stop before printing 5
+        }
+        println!("i is: {}", i);
+    }
+
+    //rust strings
+    let text1 = "Hello World".to_string();
+    let text2 = String::from("Hello World");
+
+    let mut greeting = String::from("Hello");
+    greeting.push_str(" World");
+    println!("{}", greeting); // Hello World
+
+    let mut word = String::from("Hi");
+    word.push('!');
+    println!("{}", word); // Hi!
+
+    //concatenate string
+    let s1 = String::from("Hello");
+    let s2 = String::from("World!");
+    let s3 = String::from("What a beautiful day!");
+    let result = format!("{} {} {}", s1, s2, s3);
+    println!("{}", result);
+    //or
+    let s1 = String::from("Hello");
+    let s2 = String::from("World!");
+    let s3 = String::from("What a beautiful day!");
+    let result = s1 + " " + &s2 + " " + &s3;
+    println!("{}", result);
+
+    //borrowing
+    let mut name = String::from("John");
+    let name_ref = &mut name;
+    name_ref.push_str(" Doe");
+
+    println!("{}", name_ref);
 }
