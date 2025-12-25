@@ -1,3 +1,12 @@
+use std::collections::HashMap;
+
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right,
+}
+
 fn main()
 {
     let name = "Othniella";
@@ -179,4 +188,58 @@ fn main()
     name_ref.push_str(" Doe");
 
     println!("{}", name_ref);
+
+    //data structures
+    let fruits = ["Apple", "banana", "orange"];
+    println!("last fruits {}", fruits[2]);
+    println!("we have {:?}", fruits);
+
+    //vector
+    let mut fruits = vec!["apple", "banana"];
+    fruits.push("cherry");
+
+    println!("Last fruit: {}", fruits[2]);
+
+    //hashmap
+
+
+
+    let mut capitalCities = HashMap::new();
+    capitalCities.insert("France", "Paris");
+    capitalCities.insert("Japan", "Tokyo");
+
+    println!("Capital of Japan is {}", capitalCities["Japan"]);
+
+    //struct
+    // Create a Struct called Person
+    struct Person {
+        name: String,
+        age: u32,
+        can_vote: bool,
+    }
+
+    // Create a Person object
+    let user = Person {
+        name: String::from("John"),
+        age: 35,
+        can_vote: true,
+    };
+
+    // Access and print the values
+    println!("Name: {}", user.name);
+    println!("Age: {}", user.age);
+    println!("Can vote? {}", user.can_vote);
+
+    //enum
+    let my_direction = Direction::Left;
+
+    match my_direction {
+
+        Direction::Up => println!("Going up"),
+        Direction::Down => println!("Going down"),
+        Direction::Left => println!("Going left"),
+        Direction::Right => println!("Going right"),
+    }
+
+
 }
